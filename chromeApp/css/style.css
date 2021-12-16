@@ -1,0 +1,428 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-transform: capitalize;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+html {
+  font-size: 62.5%;
+  overflow: hidden;
+}
+
+body {
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: linear-gradient(rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  padding: 5.5rem;
+}
+section {
+  padding: 1rem 7%;
+  min-height: 100%;
+}
+
+.btn {
+  font-size: 2rem;
+  padding: 0.7rem 4rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+.btn:hover {
+  background: rgba(255, 255, 255, 0.5);
+  color: #555;
+}
+.heading {
+  font-size: 3rem;
+  text-align: center;
+  padding: 1rem;
+  color: #fff;
+}
+
+.login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+.login--hidden {
+  transform: translateY(-110%);
+}
+.login__form {
+  width: 70rem;
+  margin: 0 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.login__input {
+  border-bottom: 0.2rem solid #fff;
+  margin-bottom: 4rem;
+  width: 92%;
+  font-size: 2rem;
+  color: #fff;
+  text-transform: none;
+  background: none;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+}
+.input--dream {
+  margin-bottom: 0;
+}
+.login__input::placeholder {
+  color: #aaa;
+}
+.login__label {
+  font-size: 3rem;
+  cursor: pointer;
+  margin-left: 2rem;
+  color: #fff;
+}
+.login__label:hover {
+  color: #555;
+}
+
+.header {
+  width: 35rem;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(0.4rem);
+  text-align: center;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.header__user {
+  padding-top: 2rem;
+}
+.user__img {
+  margin: 1rem 0;
+  height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 1rem rgba(255, 255, 255, 0.2);
+}
+.user__name {
+  font-size: 3rem;
+  color: #fff;
+  padding: 0.5rem 0;
+}
+.user__dream {
+  font-size: 1.8rem;
+  color: #eee;
+  font-weight: lighter;
+}
+
+.header__nav {
+  padding: 1rem 3rem;
+}
+.header__nav li {
+  margin: 1rem 0;
+  list-style: none;
+}
+.header__nav a {
+  display: block;
+  padding: 1rem;
+  font-size: 2rem;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  transition: all 0.2s linear;
+}
+.header__nav a:hover {
+  color: #555;
+  background: rgba(255, 255, 255, 0.5);
+  transition: none;
+}
+
+.container {
+  height: 58rem;
+  width: 80rem;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(0.4rem);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.container__home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  position: relative;
+  padding-bottom: 10rem;
+}
+.container__home h3 {
+  font-size: 2.5rem;
+  font-weight: lighter;
+  color: #eee;
+}
+.home__name span {
+  font-size: 4rem;
+  color: #fff;
+}
+.user__dream {
+  padding: 1rem 0;
+}
+.user__dream span {
+  font-size: 3rem;
+  color: #fff;
+}
+#clock {
+  font-size: 5rem;
+  padding: 0.7rem 4rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  margin-top: 4rem;
+  cursor: pointer;
+  transition: .2s linear;
+}
+#clock:hover {
+  background: rgba(255, 255, 255, 0.5);
+  color: #555;
+}
+.home__share {
+  position: absolute;
+  left: 50%;
+  bottom: 5rem;
+  transform: translateX(-50%);
+  display: flex;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  transition: 0.2s linear;
+}
+.home__share a {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  padding: 1rem 2rem;
+  margin: 1rem;
+  color: #fff;
+  font-size: 2rem;
+  border-radius: 1rem;
+}
+.home__share a:hover {
+  background: rgba(255, 255, 255, 0.5);
+  color: #555;
+}
+
+.about__name {
+  font-size: 2.5rem;
+  color: #eee;
+}
+.about__name span {
+  color: #fff;
+}
+.about__content p {
+  font-size: 1.5rem;
+  color: #eee;
+  padding: 0.5rem 0;
+}
+.about__skills {
+  padding: 1rem 0;
+}
+.skills__progress {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+}
+.skills__progress h3 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  color: #fff;
+}
+.skills__progress .bar {
+  position: relative;
+  width: 100%;
+  height: 0.3rem;
+  margin: 1rem 0;
+  background: #555;
+}
+.skills__progress .bar span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+}
+.skills__progress:nth-child(1) .bar span {
+  width: 95%;
+}
+.skills__progress:nth-child(2) .bar span {
+  width: 85%;
+}
+.skills__progress:nth-child(3) .bar span {
+  width: 65%;
+}
+.skills__progress:nth-child(4) .bar span {
+  width: 70%;
+}
+
+.service__box-container {
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.service__box {
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  width: 32rem;
+}
+.service__box i {
+  color: #fff;
+  font-size: 4.5rem;
+  padding: 1rem 0;
+}
+.service__box p {
+  color: #eee;
+  font-size: 1.3rem;
+  padding: 0.5rem 5rem;
+}
+
+.education__box-container {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+}
+.education__box {
+  width: 30rem;
+  padding: 0 2rem;
+  padding-bottom: 4rem;
+  border-left: 0.2rem solid #eee;
+}
+.education__year {
+  font-size: 2rem;
+  color: #eee;
+  position: relative;
+}
+.education__year::before {
+  content: '';
+  position: absolute;
+  top: 0.3rem;
+  left: -3.1rem;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background: #fff;
+}
+.education__box h3 {
+  font-size: 2rem;
+  color: #fff;
+  padding-top: 1rem;
+}
+.education__box p {
+  font-size: 1.3rem;
+  color: #eee;
+  padding: 1rem 0;
+}
+
+.contact__row {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 7rem;
+  align-items: center;
+}
+.contact__form {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+.contact__box {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  padding: 0 1rem;
+  margin: 1rem 0;
+  height: 4rem;
+  width: 49%;
+  font-size: 1.7rem;
+  color: #fff;
+  text-transform: none;
+}
+.contact__box::placeholder {
+  text-transform: capitalize;
+  color: #eee;
+}
+.contact__message {
+  padding: 1rem;
+  height: 15rem;
+  resize: none;
+  width: 100%;
+}
+.contact__btn {
+  margin-bottom: 1rem;
+}
+.contact__content {
+  padding: 0 5rem;
+}
+.contact__icons {
+  padding: 1rem 0;
+}
+.contact__icons h3 {
+  padding: 1rem 0;
+  font-size: 2rem;
+  color: #fff;
+  display: flex;
+}
+.contact__icons i {
+  padding-right: 0.5rem;
+}
+.contact__icons p {
+  font-size: 1.5rem;
+  color: #eee;
+}
+
+.theme-toggler {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  backdrop-filter: blur(0.4rem);
+}
+.theme-toggler span {
+  display: block;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 2rem 2.5em;
+  box-shadow: 0 0 0 0.5rem rgba(255, 255, 255, 0.1), 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
