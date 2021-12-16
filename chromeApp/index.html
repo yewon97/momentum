@@ -40,7 +40,7 @@
     <form id="login__form" class="login__form">
       <input required maxlength="15" type="text" placeholder="What is your name?" class="login__input input--name">
       <input required maxlength="20" type="text" placeholder="What's your dream" class="login__input input--dream">
-      <label for="" class="fas fa-sign-in-alt login__label"></label>
+      <button type="submit" class="fas fa-sign-in-alt login__label"></button>
     </form>
   </div>
   <!-- login form ends -->
@@ -204,6 +204,13 @@
   <script src="js/login.js" type="text/javascript"></script>
   <script src="js/clock.js" type="text/javascript"></script>
   <script type="text/javascript">
+    let themeColor = document.querySelectorAll(".theme-toggler span");
+    themeColor.forEach(function (color) {
+      color.addEventListener('click', () => {
+        let background = color.style.background;
+        document.querySelector("body").style.background = background;
+      })
+    });
     // themeColor.forEach(color => color.addEventListener('click', () => {
     //   let background = color.style.background;
     //   document.querySelector("body").style.background = background;

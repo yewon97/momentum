@@ -96,6 +96,7 @@ section {
   cursor: pointer;
   margin-left: 2rem;
   color: #fff;
+  background: none;
 }
 .login__label:hover {
   color: #555;

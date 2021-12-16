@@ -1,16 +1,3 @@
-var type = new Typed('.home__post--typing-text', {
-  strings: [''],
-  typeSpeed: 150,
-});
-
-let themeColor = document.querySelectorAll(".theme-toggler span");
-themeColor.forEach(function (color) {
-  color.addEventListener('click', () => {
-    let background = color.style.background;
-    document.querySelector("body").style.background = background;
-  })
-});
-
 const login = document.querySelector('.login');
 const loginForm = document.querySelector('.login__form');
 const inputName = document.querySelector('.input--name');
@@ -20,11 +7,9 @@ const loginLable = document.querySelector('.login__label');
 const HIDDEN_CLASSNAME = 'login--hidden';
 const USERNAME_KEY = 'username';
 const USERDREAM_KEY = 'userdream';
-
 const $name = document.querySelectorAll('.user__name, .home__name>span');
 const $dream = document.querySelector('.user__dream');
 
-// input에 값을 입력 받음
 function onLoginClick(event) {
   event.preventDefault();
   login.classList.add(HIDDEN_CLASSNAME);
@@ -41,7 +26,10 @@ function paintGreeting(username, userdream) {
     $name[i].innerText = username;
   }
   $dream.innerText = userdream;
-  type.options.strings = userdream;
+  let type = new Typed('.home__post--typing-text', {
+    strings: [userdream],
+    typeSpeed: 150,
+  });
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
@@ -56,7 +44,3 @@ if (savedUsername === null || savedUserdream === null) {
   paintGreeting(savedUsername, savedUserdream);
 }
 
-// 값을 입력 안하면 안넘어감
-
-// 값을 입력 받으면 위로 올라감 (.login--hidden 부여)
-// 그 값이 #name에 모두 입력됨(2곳)
