@@ -4,6 +4,9 @@ const inputName = document.querySelector('.input--name');
 const inputDream = document.querySelector('.input--dream');
 const loginLable = document.querySelector('.login__label');
 
+const userImage = document.querySelector('.user__img');
+let savedFeeling = localStorage.getItem('feeling');
+
 const HIDDEN_CLASSNAME = 'login--hidden';
 const USERNAME_KEY = 'username';
 const USERDREAM_KEY = 'userdream';
@@ -22,7 +25,7 @@ function onLoginClick(event) {
 
 function paintGreeting(username, userdream) {
   login.classList.add(HIDDEN_CLASSNAME);
-  for (i=0; i<$name.length; i++) {
+  for (i = 0; i < $name.length; i++) {
     $name[i].innerText = username;
   }
   $dream.innerText = userdream;
@@ -35,7 +38,6 @@ function paintGreeting(username, userdream) {
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 const savedUserdream = localStorage.getItem(USERDREAM_KEY);
 
-
 if (savedUsername === null || savedUserdream === null) {
   // show the form
   // login.classList.remove(HIDDEN_CLASSNAME);
@@ -44,3 +46,31 @@ if (savedUsername === null || savedUserdream === null) {
   paintGreeting(savedUsername, savedUserdream);
 }
 
+// 만약에 내가 이미지를 누르면?
+
+let valueUserImage = userImage.attributes.src.value;
+console.log(valueUserImage);
+
+if(savedFeeling === null) {
+  userImage.attributes.src.value = 'images/happy.png'
+  localStorage.setItem('feeling', valueUserImage);
+}
+
+const faceImages = document.querySelectorAll('.faces__container img');
+faceImages.forEach((face) => {
+  face.addEventListener('click', () => {
+    let changeFace = face.attributes.src.value;
+    userImage.attributes.src.value = changeFace;
+    localStorage.setItem('feeling', changeFace);
+  });
+  userImage.attributes.src.value = savedFeeling;
+});
+
+/*   faceImages.forEach(function (face) {
+  face.addEventListener('click', () => {
+    let changeFace = face.attributes.src.value;
+    userImage.attributes.src.value = changeFace;
+    localStorage.setItem('feeling', changeFace);
+  });
+  userImage.attributes.src.value = savedFeeling;
+}); */
